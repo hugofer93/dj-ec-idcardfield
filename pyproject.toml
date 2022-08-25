@@ -49,7 +49,7 @@ pytest-cov = "~3.0"
 tox = "~3.25"
 
 [tool.poetry.extras]
-djangorestframework = ["djangorestframework>=3.9.3"]
+djangorestframework = ["djangorestframework"]
 
 [tool.pytest.ini_options]
 python_paths = "tests"
@@ -60,7 +60,7 @@ addopts = "-n auto --cov"
 
 [tool.coverage.run]
 include = ["ec_idcardfield/*"]
-omit = ["*/__init__.py", "tests/*", "*/apps.py"]
+omit = ["*/__init__.py", "tests/*", "*/apps.py", "*/locale/*"]
 
 [build-system]
 requires = ["poetry_core>=1.0.0"]
@@ -75,21 +75,23 @@ requires =
 envlist =
     py{36,37}-dj{22}-drf{39,310,311},
     py{36,37}-dj{30,31}-drf{311,312},
-    py{36,37,38,39}-dj{32}-drf{313},
-    py{38,39,310}-dj{40}-drf{313},
-
+    py{36,37,38,39}-dj{32}-drf{313,314},
+    py{38,39,310}-dj{40,41}-drf{313,314},
 [testenv]
-whitelist_externals = poetry
+allowlist_externals = poetry
 deps =
     dj22: Django == 2.2
     dj30: Django == 3.0
     dj31: Django == 3.1
     dj32: Django == 3.2
     dj40: Django == 4.0
-    drf39: djangorestframework >= 3.9.3, < 3.10.0
+    dj41: Django == 4.1
+    drf39: djangorestframework == 3.9.3
     drf310: djangorestframework == 3.10
     drf311: djangorestframework == 3.11
     drf312: djangorestframework == 3.12
     drf313: djangorestframework == 3.13
-commands = poetry run pytest
+    drf314: djangorestframework == 3.14
+commands =
+    poetry run pytest
 """

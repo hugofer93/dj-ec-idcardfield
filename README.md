@@ -12,6 +12,18 @@ It requires Python 3.6.1+ and Django 2.2+ to run.
 
 ## Usage
 
+### Settings
+
+First, add `'ec_idcardfield'` to your `INSTALLED_APPS` in `settings.py` file:
+
+```python
+INSTALLED_APPS = [
+    ...
+    'ec_idcardfield',
+    ...
+]
+```
+
 ### Models
 
 ```python
@@ -121,13 +133,13 @@ class OptionalIdcardOrRUCSerializer(Serializer):
 git clone https://github.com/hugofer93/django-ec-idcardfield/
 
 # up service with Docker
-docker-compose up -d
+docker compose up -d
 
 # run tests
-docker-compose exec idcardfield poetry run pytest
+docker compose exec django-idcardfield poetry run pytest
 
 # if you want to test compat with others versions
-docker-compose exec idcardfield poetry run tox
+docker compose exec django-idcardfield poetry run tox
 ```
 
 

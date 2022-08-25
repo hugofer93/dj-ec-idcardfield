@@ -1,4 +1,5 @@
 from django.forms import CharField
+from django.utils.translation import gettext_lazy as _
 
 from ec_idcardfield.validators import (
     validate_idcard,
@@ -13,6 +14,7 @@ class IdcardField(CharField):
     def __init__(self, **kwargs):
         kwargs.setdefault('max_length', validate_idcard.NUMBER_DIGITS)
         kwargs.setdefault('min_length', validate_idcard.NUMBER_DIGITS)
+        kwargs.setdefault('label', _('Idcard'))
         super().__init__(**kwargs)
 
 
@@ -22,6 +24,7 @@ class RUCField(CharField):
     def __init__(self, *args, **kwargs):
         kwargs.setdefault('max_length', validate_ruc.NUMBER_DIGITS)
         kwargs.setdefault('min_length', validate_ruc.NUMBER_DIGITS)
+        kwargs.setdefault('label', _('RUC'))
         super().__init__(**kwargs)
 
 
@@ -31,4 +34,5 @@ class IdcardOrRUCField(CharField):
     def __init__(self, *args, **kwargs):
         kwargs.setdefault('max_length', validate_ruc.NUMBER_DIGITS)
         kwargs.setdefault('min_length', validate_idcard.NUMBER_DIGITS)
+        kwargs.setdefault('label', _('Idcard or RUC'))
         super().__init__(**kwargs)

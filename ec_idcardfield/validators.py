@@ -14,7 +14,7 @@ class IdcardValidator(RegexValidator):
     FOREIGNERS_WITHOUT_IDCARD = LEGAL_PERSONS
     idcard_regex = r'^[0-2]{1}[0-9]{9}'
     regex = re_compile(idcard_regex + '$')
-    message = _('Enter a valid integer.')
+    message = _('Enter a valid number.')
     code = 'invalid'
 
     def __call__(self, value):

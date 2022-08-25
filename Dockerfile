@@ -9,7 +9,7 @@ ENV PYTHONDONTWRITEBYTECODE=1 \
     PIP_NO_CACHE_DIR=off \
     PIP_DISABLE_PIP_VERSION_CHECK=on \
     # Poetry
-    POETRY_VERSION=1.1.14 \
+    POETRY_VERSION=1.1.15 \
     POETRY_HOME=/opt/poetry \
     POETRY_VIRTUALENVS_IN_PROJECT=1 \
     # Pyenv
@@ -17,12 +17,28 @@ ENV PYTHONDONTWRITEBYTECODE=1 \
 ENV PATH="$POETRY_HOME/bin:$PATH"
 ENV PATH="$PYENV_ROOT/bin:$PATH"
 
-WORKDIR /opt/idcardfield
+WORKDIR /opt/django-idcardfield
 
-RUN apk add --no-cache --update gcc linux-headers libc-dev \
-    && apk add --no-cache --update bash git make zlib-dev libffi-dev bzip2-dev ncurses-dev readline-dev openssl-dev sqlite-dev xz-dev patch \
-    && wget -qO- https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python - \
+RUN apk add --no-cache --update \
+        gcc \
+        linux-headers \
+        libc-dev \
+        gettext \
+        bash \
+        git \
+        make \
+        zlib-dev \
+        libffi-dev \
+        bzip2-dev \
+        ncurses-dev \
+        readline-dev \
+        openssl-dev \
+        sqlite-dev \
+        xz-dev \
+        patch \
+    && wget -qO- https://install.python-poetry.org | python - \
     && git clone https://github.com/pyenv/pyenv.git ${PYENV_ROOT} \
+    && eval "$(pyenv init -)" \
     && pyenv install 3.6.1 \
     && pyenv install 3.7.0 \
     && pyenv install 3.8.0 \
@@ -30,5 +46,3 @@ RUN apk add --no-cache --update gcc linux-headers libc-dev \
     && pyenv install 3.10.0
 
 COPY . .
-
-RUN poetry install --no-root

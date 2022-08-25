@@ -12,6 +12,18 @@ It requires Python 3.6.1+ and Django 2.2+ to run.
 
 ## Usage
 
+### Settings
+
+First, add `'ec_idcardfield'` to your `INSTALLED_APPS` in `settings.py` file:
+
+```python
+INSTALLED_APPS = [
+    ...
+    'ec_idcardfield',
+    ...
+]
+```
+
 ### Models
 
 ```python
