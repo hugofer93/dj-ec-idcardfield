@@ -1,0 +1,97 @@
+[tool.poetry]
+name = "django-ec-idcardfield"
+version = "0.1.0"
+description = "An Idcard and RUC field for Ecuador for Django Models, Forms, and Serializers."
+authors = ["Hugo Silva Álvarez <hugofer93@gmail.com>"]
+license = "MIT"
+homepage = "https://github.com/hugofer93/django-ec-idcardfield"
+repository = "https://github.com/hugofer93/django-ec-idcardfield"
+documentation = "https://github.com/hugofer93/django-ec-idcardfield"
+readme = "README.md"
+include = ["ec_idcardfield/*.py"]
+packages = [{ include = "ec_idcardfield" }]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Environment :: Web Environment",
+    "Framework :: Django",
+    "Framework :: Django :: 2.2",
+    "Framework :: Django :: 3.0",
+    "Framework :: Django :: 3.1",
+    "Framework :: Django :: 3.2",
+    "Framework :: Django :: 4.0",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.6",
+    "Programming Language :: Python :: 3.7",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3 :: Only'",
+    "Topic :: Internet :: WWW/HTTP",
+]
+
+[tool.poetry.dependencies]
+python = ">=3.6.1"
+django = ">=2.2"
+
+[tool.poetry.dev-dependencies]
+djangorestframework = ">=3.9.3"
+mkdocs = "~1.2"
+mkdocs-material = "~7.2"
+pylint = "~2.6"
+pycodestyle = "~2.6"
+pytest-django = "~4.4"
+pytest-pythonpath = "~0.7"
+pytest-xdist = {version = "~2.3", extras = ["psutil"]}
+pytest-cov = "~3.0"
+tox = "~3.25"
+
+[tool.poetry.extras]
+djangorestframework = ["djangorestframework"]
+
+[tool.pytest.ini_options]
+python_paths = "tests"
+DJANGO_SETTINGS_MODULE = "tests.settings"
+django_find_project = "false"
+python_files = "*_tests.py"
+addopts = "-n auto --cov"
+
+[tool.coverage.run]
+include = ["ec_idcardfield/*"]
+omit = ["*/__init__.py", "tests/*", "*/apps.py", "*/locale/*"]
+
+[build-system]
+requires = ["poetry_core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.tox]
+legacy_tox_ini = """
+[tox]
+isolated_build = True
+requires =
+    tox-pyenv
+envlist =
+    py{36,37}-dj{22}-drf{39,310,311},
+    py{36,37}-dj{30,31}-drf{311,312},
+    py{36,37,38,39}-dj{32}-drf{313,314},
+    py{38,39,310}-dj{40,41}-drf{313,314},
+[testenv]
+allowlist_externals = poetry
+deps =
+    dj22: Django == 2.2
+    dj30: Django == 3.0
+    dj31: Django == 3.1
+    dj32: Django == 3.2
+    dj40: Django == 4.0
+    dj41: Django == 4.1
+    drf39: djangorestframework == 3.9.3
+    drf310: djangorestframework == 3.10
+    drf311: djangorestframework == 3.11
+    drf312: djangorestframework == 3.12
+    drf313: djangorestframework == 3.13
+    drf314: djangorestframework == 3.14
+commands =
+    poetry run pytest
+"""
