@@ -136,10 +136,10 @@ git clone https://github.com/hugofer93/django-ec-idcardfield/
 docker compose up -d
 
 # run tests
-docker compose exec django-idcardfield poetry run pytest
+docker compose exec idcardfield poetry run pytest
 
 # if you want to test compat with others versions
-docker compose exec django-idcardfield poetry run tox
+docker compose exec idcardfield poetry run tox
 ```
 
 
