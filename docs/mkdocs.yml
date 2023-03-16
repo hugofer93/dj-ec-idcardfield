@@ -1,6 +1,8 @@
 site_name: Django EC IDCard Field
 site_author: https://devlance.me/
 copyright: <a target="_blank" href="https://devlance.me/">Developed with &hearts; by DEVLANCE</a>
+repo_name: hugofer93/django-ec-idcardfield
+repo_url: https://github.com/hugofer93/django-ec-idcardfield
 
 
 nav:
