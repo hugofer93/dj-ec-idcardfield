@@ -17,7 +17,7 @@ ENV PYTHONDONTWRITEBYTECODE=1 \
 ENV PATH="$POETRY_HOME/bin:$PATH"
 ENV PATH="$PYENV_ROOT/bin:$PATH"
 
-WORKDIR /opt/django-idcardfield
+WORKDIR /opt/dj-ec-idcardfield
 
 RUN apk add --no-cache --update \
         gcc \

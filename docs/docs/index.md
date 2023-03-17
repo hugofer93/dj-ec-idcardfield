@@ -1,4 +1,4 @@
-# django-ec-idcardfield
+# dj-ec-idcardfield
 
 An Idcard and RUC field for Ecuador for Django Models, Forms, and Serializers.
 
@@ -7,19 +7,19 @@ An Idcard and RUC field for Ecuador for Django Models, Forms, and Serializers.
 
 It requires Python 3.6.1+ and Django 2.2+ to run.
 
-`pip install django-ec-idcardfield`
+`pip install dj-ec-idcardfield`
 
 
 ## Usage
 
 ### Settings
 
-First, add `'ec_idcardfield'` to your `INSTALLED_APPS` in `settings.py` file:
+First, add `'dj_ec_idcardfield'` to your `INSTALLED_APPS` in `settings.py` file:
 
 ```python
 INSTALLED_APPS = [
     ...
-    'ec_idcardfield',
+    'dj_ec_idcardfield',
     ...
 ]
 ```
@@ -29,7 +29,7 @@ INSTALLED_APPS = [
 ```python
 from django.db.models import Model
 
-from ec_idcardfield.models import IdcardField, IdcardOrRUCField, RUCField
+from dj_ec_idcardfield.models import IdcardField, IdcardOrRUCField, RUCField
 
 
 class MandatoryIdcard(Model):
@@ -61,7 +61,7 @@ class OptionalIdcardOrRUC(Model):
 ```python
 from django.forms import Form
 
-from ec_idcardfield.forms import IdcardField, IdcardOrRUCField, RUCField
+from dj_ec_idcardfield.forms import IdcardField, IdcardOrRUCField, RUCField
 
 
 class MandatoryIdcardForm(Form):
@@ -98,7 +98,7 @@ Before using Serializer fields, you must install Django REST Framework 3.9.3+:
 ```python
 from rest_framework.serializers import Serializer
 
-from ec_idcardfield.serializers import IdcardField, IdcardOrRUCField, RUCField
+from dj_ec_idcardfield.serializers import IdcardField, IdcardOrRUCField, RUCField
 
 
 class MandatoryIdcardSerializer(Serializer):
@@ -130,16 +130,16 @@ class OptionalIdcardOrRUCSerializer(Serializer):
 
 ```bash
 # clone repository
-git clone https://github.com/hugofer93/django-ec-idcardfield/
+git clone https://github.com/hugofer93/dj-ec-idcardfield/
 
 # up service with Docker
 docker compose up -d
 
 # run tests
-docker compose exec idcardfield poetry run pytest
+docker compose exec dj-ec-idcardfield poetry run pytest
 
 # if you want to test compat with others versions
-docker compose exec idcardfield poetry run tox
+docker compose exec dj-ec-idcardfield poetry run tox
 ```
 
 

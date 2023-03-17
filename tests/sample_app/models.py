@@ -1,6 +1,6 @@
 from django.db.models import Model
 
-from ec_idcardfield.models import IdcardField, IdcardOrRUCField, RUCField
+from dj_ec_idcardfield.models import IdcardField, IdcardOrRUCField, RUCField
 
 
 # IDCARD FIELD

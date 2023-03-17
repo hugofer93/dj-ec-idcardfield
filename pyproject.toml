@@ -1,15 +1,15 @@
 [tool.poetry]
-name = "django-ec-idcardfield"
+name = "dj-ec-idcardfield"
 version = "0.1.0"
 description = "An Idcard and RUC field for Ecuador for Django Models, Forms, and Serializers."
 authors = ["Hugo Silva Álvarez <hugofer93@gmail.com>"]
 license = "MIT"
-homepage = "https://github.com/hugofer93/django-ec-idcardfield"
-repository = "https://github.com/hugofer93/django-ec-idcardfield"
-documentation = "https://hugofer93.github.io/django-ec-idcardfield/"
+homepage = "https://github.com/hugofer93/dj-ec-idcardfield"
+repository = "https://github.com/hugofer93/dj-ec-idcardfield"
+documentation = "https://hugofer93.github.io/dj-ec-idcardfield/"
 readme = "README.md"
-include = ["ec_idcardfield/*.py"]
-packages = [{ include = "ec_idcardfield" }]
+include = ["dj_ec_idcardfield/*.py"]
+packages = [{ include = "dj_ec_idcardfield" }]
 classifiers = [
     "Development Status :: 5 - Production/Stable",
     "Environment :: Web Environment",
@@ -40,10 +40,7 @@ django = ">=2.2"
 djangorestframework = ">=3.9.3"
 mkdocs = "~1.2"
 mkdocs-material = "~7.2"
-pylint = "~2.6"
-pycodestyle = "~2.6"
 pytest-django = "~4.4"
-pytest-pythonpath = "~0.7"
 pytest-xdist = {version = "~2.3", extras = ["psutil"]}
 pytest-cov = "~3.0"
 tox = "~3.25"
@@ -52,14 +49,14 @@ tox = "~3.25"
 djangorestframework = ["djangorestframework"]
 
 [tool.pytest.ini_options]
-python_paths = "tests"
+pythonpath = "tests"
 DJANGO_SETTINGS_MODULE = "tests.settings"
 django_find_project = "false"
 python_files = "*_tests.py"
 addopts = "-n auto --cov"
 
 [tool.coverage.run]
-include = ["ec_idcardfield/*"]
+include = ["dj_ec_idcardfield/*"]
 omit = ["*/__init__.py", "tests/*", "*/apps.py", "*/locale/*"]
 
 [build-system]
