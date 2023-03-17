@@ -1,7 +1,7 @@
 from django.forms import CharField
 from django.utils.translation import gettext_lazy as _
 
-from ec_idcardfield.validators import (
+from dj_ec_idcardfield.validators import (
     validate_idcard,
     validate_idcard_or_ruc,
     validate_ruc,

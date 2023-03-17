@@ -2,7 +2,7 @@ import pytest
 
 from django.core.exceptions import ValidationError
 
-from ec_idcardfield.validators import (
+from dj_ec_idcardfield.validators import (
     validate_idcard,
     validate_idcard_or_ruc,
     validate_ruc,

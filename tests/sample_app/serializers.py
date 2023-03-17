@@ -1,6 +1,10 @@
 from rest_framework.serializers import Serializer
 
-from ec_idcardfield.serializers import IdcardField, IdcardOrRUCField, RUCField
+from dj_ec_idcardfield.serializers import (
+    IdcardField,
+    IdcardOrRUCField,
+    RUCField,
+)
 
 
 # IDCARD FIELD

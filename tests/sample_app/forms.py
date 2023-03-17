@@ -1,6 +1,6 @@
 from django.forms import Form
 
-from ec_idcardfield.forms import IdcardField, IdcardOrRUCField, RUCField
+from dj_ec_idcardfield.forms import IdcardField, IdcardOrRUCField, RUCField
 
 
 # IDCARD FIELD

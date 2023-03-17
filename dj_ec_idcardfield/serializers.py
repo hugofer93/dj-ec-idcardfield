@@ -3,7 +3,7 @@ try:
 except ImportError:
     ModuleNotFoundError('django rest framework is not installed')
 
-from ec_idcardfield.validators import (
+from dj_ec_idcardfield.validators import (
     validate_idcard,
     validate_idcard_or_ruc,
     validate_ruc,

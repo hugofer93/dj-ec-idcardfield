@@ -5,7 +5,7 @@ SECRET_KEY = '7h3_$3cr37'
 DEBUG = True
 
 INSTALLED_APPS = [
-    'ec_idcardfield',
+    'dj_ec_idcardfield',
     'tests.sample_app',
 ]
 
