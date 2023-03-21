@@ -15,7 +15,7 @@ theme:
       text: Ubuntu 300
       code: Ubuntu mono
   icon:
-      logo: fontawesome/solid/tools
+      logo: material/tools
 
 
 markdown_extensions:
