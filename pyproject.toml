@@ -19,6 +19,9 @@ classifiers = [
     "Framework :: Django :: 3.1",
     "Framework :: Django :: 3.2",
     "Framework :: Django :: 4.0",
+    "Framework :: Django :: 4.1",
+    "Framework :: Django :: 4.2",
+    "Framework :: Django :: 5.0",
     "Intended Audience :: Developers",
     "License :: OSI Approved :: MIT License",
     "Operating System :: OS Independent",
@@ -28,6 +31,8 @@ classifiers = [
     "Programming Language :: Python :: 3.8",
     "Programming Language :: Python :: 3.9",
     "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
     "Programming Language :: Python :: 3 :: Only",
     "Topic :: Internet :: WWW/HTTP",
 ]
@@ -49,7 +54,7 @@ tox = "~3.25"
 djangorestframework = ["djangorestframework"]
 
 [tool.pytest.ini_options]
-pythonpath = "tests"
+pythonpath = ". tests"
 DJANGO_SETTINGS_MODULE = "tests.settings"
 django_find_project = "false"
 python_files = "*_tests.py"
@@ -70,10 +75,10 @@ isolated_build = True
 requires =
     tox-pyenv
 envlist =
-    py{36,37}-dj{22}-drf{39,310,311},
-    py{36,37}-dj{30,31}-drf{311,312},
+    py{36,37}-dj{22,30,31}-drf{39,310,311,312},
     py{36,37,38,39}-dj{32}-drf{313,314},
-    py{38,39,310}-dj{40,41}-drf{313,314},
+    py{38,39,310,311}-dj{40,41,42}-drf{313,314},
+    py{310,311}-dj{50}-drf{313,314},
 [testenv]
 allowlist_externals = poetry
 deps =
@@ -83,6 +88,8 @@ deps =
     dj32: Django == 3.2
     dj40: Django == 4.0
     dj41: Django == 4.1
+    dj42: Django == 4.2
+    dj50: Django == 5.0
     drf39: djangorestframework == 3.9.3
     drf310: djangorestframework == 3.10
     drf311: djangorestframework == 3.11
