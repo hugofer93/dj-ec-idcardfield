@@ -7,3 +7,4 @@ An Idcard and RUC field for Ecuador for Django Models, Forms, and Serializers.
 - Completed library
 - Tests pass
 - Translations
+- Library Documentation
