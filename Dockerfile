@@ -26,6 +26,7 @@ RUN apk add --no-cache --update gcc \
                                 libc-dev \
                                 gettext \
                                 bash \
+                                bash-completion \
                                 git \
                                 make \
                                 zlib-dev \
@@ -37,15 +38,19 @@ RUN apk add --no-cache --update gcc \
                                 sqlite-dev \
                                 xz-dev \
                                 patch \
+                                shadow \
+    && chsh -s /bin/bash \
     && wget -qO- https://install.python-poetry.org | python - \
     && git clone https://github.com/pyenv/pyenv.git ${PYENV_ROOT} \
     && eval "$(pyenv init --path)"
+    && poetry self completion bash >> ~/.bash_completion
 
 RUN pyenv install 3.8.0
 RUN pyenv install 3.9.0
 RUN pyenv install 3.10.0
 RUN pyenv install 3.11.0
 RUN pyenv install 3.12.0
+RUN pyenv install 3.13.0
 
 COPY . .
 
