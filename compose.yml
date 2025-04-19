@@ -9,6 +9,6 @@ services:
     ports:
       - "8000:8000"
     command: >
-      sh -c "poetry install --with dev,test,docs
+      bash -c "poetry install --with dev,test,docs
       && poetry run mkdocs serve -f docs/mkdocs.yml -a 0.0.0.0:8000"
     restart: "unless-stopped"

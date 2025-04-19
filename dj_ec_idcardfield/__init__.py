@@ -1,6 +1,6 @@
-__version__ = '0.1.0'
+__version__ = '0.1.1'
 
-DJANGO_MIN_VERSION = '3.2'
+DJANGO_MIN_VERSION = '4.2'
 
 DRF_MIN_VERSION = '3.14'
 

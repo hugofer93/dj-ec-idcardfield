@@ -5,7 +5,7 @@ An Idcard and RUC field for Ecuador for Django Models, Forms, and Serializers.
 
 ## Installation
 
-It requires Python 3.8+ and Django 3.2+ to run.
+It requires Python 3.8+ and Django 4.2+ to run.
 
 `pip install dj-ec-idcardfield`
 
