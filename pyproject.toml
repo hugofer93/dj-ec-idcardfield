@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "dj-ec-idcardfield"
-version = "0.1.0"
+version = "0.1.1"
 description = "An Idcard and RUC field for Ecuador for Django Models, Forms, and Serializers."
 authors = ["Hugo Silva Álvarez <hugofer93@gmail.com>"]
 license = "MIT"

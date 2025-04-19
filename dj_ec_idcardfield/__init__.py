@@ -1,4 +1,4 @@
-__version__ = '0.1.0'
+__version__ = '0.1.1'
 
 DJANGO_MIN_VERSION = '4.2'
 
